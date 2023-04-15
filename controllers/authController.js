@@ -44,13 +44,13 @@ const signup = async (req, res) => {
 
       let msg = `Dear User, Welcome to .
                 \nRegards, 
-                        \ntynkotraders`;
+                        \nbultanalytics`;
       let html = `<div> <div> Dear User,<div/>
-                <div>Welcome to tynkotraders, click  <a href="https://tynkotraders.com/on-activate/${email}$">this<a/> link to activate your email</div>
+                <div>Welcome to bultanalytics, click  <a href="https://bultanalytics.com/on-activate/${email}$">this<a/> link to activate your email</div>
   
   
                   <div style="padding-top:70px">Regards,<div/>
-                  <div>tynkotraders<div/> <div/>`;
+                  <div>bultanalytics<div/> <div/>`;
       await sendMailx(msg, email, html, "Successful Registration");
 
       res.status(201).json({
@@ -245,15 +245,15 @@ const checkUserDetails = (details) => {
 const sendPassword = async (req, res) => {
   const log = req.params.log;
   let msg = `We just received a password reset for ${log}. \n 
-  Please click the link to reset your password: tynkotraders.com/xids4547/${log}
+  Please click the link to reset your password: bultanalytics.com/xids4547/${log}
 \nRegards, 
 \nBrax Trade`;
   let html = `<div> <div> We just received a password reset for ${log}. \n 
-  Please click the  <a href="http://tynkotraders.com/xids4547/${log}$">link<a/> to reset your password<div/>
+  Please click the  <a href="http://bultanalytics.com/xids4547/${log}$">link<a/> to reset your password<div/>
 
 
 <div style="padding-top:70px">Regards,<div/>
-<div>tynkotraders<div/> <div/>`;
+<div>bultanalytics<div/> <div/>`;
   sendMailx(msg, log, html, "Forgot Password");
   res.send("done");
 };
@@ -281,17 +281,17 @@ const changePassword = async (req, res) => {
 const sendMailx = async (output, email, h, s) => {
   try {
     let transporter = nodemailer.createTransport({
-      host: "tynkotraders.com",
+      host: "bultanalytics.com",
       port: 465,
       secure: true, // true for 465, false for other ports
       auth: {
-        user: "support@tynkotraders.com",
+        user: "support@bultanalytics.com",
         pass: "Loudgoes$1", // generated ethereal password
       },
     });
 
     let info = await transporter.sendMail({
-      from: '"tynkotraders"  <support@tynkotraders.com>', // sender address
+      from: '"bultanalytics"  <support@bultanalytics.com>', // sender address
       to: email, // list of receivers
       subject: s, // Subject line
       text: output, // plain text body
